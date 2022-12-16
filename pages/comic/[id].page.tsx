@@ -80,18 +80,25 @@ export default function ComicDetail(props: PropsDetails) {
                 noWrap
                 variant="h3"
                 component="div"
-            >PERSONAGEM: </Typography>
-            {comic?.characters.items.map(({item}: any) => (
-                <Link href={`/characters/${item.resourceURI.split("characters/").pop()}`}>
-                    <Typography key={item.name}
-                        sx={{ cursor: 'pointer' }}
-                        gutterBottom
-                        noWrap
-                        variant="h6"
-                        component="div"
-                    >{item.name}</Typography>
-                </Link>
-            ))}
+            >Personagem:
+            </Typography>
+            <Typography>
+                {comic?.characters.items.map((item) => (
+                    <Link href={`/characters/${item.resourceURI.split("characters/").pop()}`}>
+                        <Typography key={item.name}
+                         sx={{ cursor: 'pointer' }}
+                         gutterBottom
+                         noWrap
+                         variant="h4"
+                         component="div" 
+                         >
+                         {item.name}   
+                        </Typography>
+
+                    </Link>
+                ))}
+            </Typography>
+
         </Container>
     )
 }

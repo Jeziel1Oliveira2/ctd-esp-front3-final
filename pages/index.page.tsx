@@ -51,10 +51,10 @@ import { useComics } from "../services/marvel/useComics";
       </Typography>
 
 
-      <Box sx={{ flexGrow: 1, margin: '20px' }}>
+      <Box sx={{ flexGrow: 1, margin: '10px' }}>
         <Grid sx={{ justifyContent: 'center' }} container spacing={2}>
           {data?.data?.results.map((comic: Comic) => (
-            <Grid key={comic.id} width={350} item >
+            <Grid key={comic.id} width={400} item >
               <Typography
                 gutterBottom
                 noWrap
@@ -69,13 +69,15 @@ import { useComics } from "../services/marvel/useComics";
                 image={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 alt={comic.title}
               />
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 10, marginTop: 10 }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 5, marginTop: 10 }}>
                 <Link href={`/checkout/${comic.id}`}>
-                  <Button variant="contained">Comprar</Button>
+                  <Button variant="contained">
+                    Comprar a sua revista 
+                  </Button>
                 </Link>
                 <Link href={`/comic/${comic.id}`}>
                   <Button variant="outlined">
-                    Detalhes
+                     Ver mais detalhes
                   </Button>
                 </Link>
 
