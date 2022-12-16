@@ -1,9 +1,9 @@
 import axios, { AxiosError } from "axios";
 import { error } from "helpers/notify/error";
 import { useMutation } from "react-query";
-import { MoldData } from "../../types/moldData";
+import { modalData } from "../../Types/modalData"
 
-export async function createCheckout(data: MoldData) {
+export async function createCheckout(data: modalData) {
 
     try {
         const response = await axios.post(
