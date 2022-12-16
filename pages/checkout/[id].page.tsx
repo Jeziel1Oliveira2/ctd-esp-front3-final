@@ -254,8 +254,8 @@ export default function Checkout(props: PropsDetails) {
                 Produtos:
             </Typography>
 
-            <Container sx={{ margin: '20px', display: 'flex', flexDirection: 'row' }}>
-                <CardMedia sx={{ width: '200px', borderRadius: '30px' }}
+            <Container sx={{ margin: '20px', display: 'flex', flexDirection: 'row', borderColor: 'black'}}>
+                <CardMedia sx={{ width: '400px', borderRadius: '60px' }}
                     component="img"
                     height="200"
                     image={`${comic?.thumbnail.path}.${comic?.thumbnail.extension}`}

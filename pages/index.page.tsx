@@ -9,10 +9,11 @@ import { Button, CardMedia, Container, Link, Typography } from "@mui/material";
 import { useComics } from "../services/marvel/useComics";
 
 
-export default function Home() {
 
-  const { data, loadingMoreComics, loadingLessComics, isLoading } = useComics()
 
+ export default function Home() {
+
+  const { data, loadingMoreComics, loadingLessComics, page } = useComics(); 
 
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -87,13 +88,20 @@ export default function Home() {
         </Grid>
       </Box>
 
-      <Button onClick={loadingLessComics} variant="outlined">
-        Carregar menos 12
+      <Button onClick={loadingLessComics} variant="outlined" disabled={page === 1}>
+      Página anterior
       </Button>
+      <Typography        
+        gutterBottom
+        align="center"
+        component="div"
+      >
+       Você está na Página de numero {page}
+      </Typography>
       <Button  sx={{ marginLeft: "12px" }} onClick={loadingMoreComics} variant="outlined">
-        Carregar mais 12
+        Próxima Página
       </Button>
-
+      
     </Container>
   );
 };

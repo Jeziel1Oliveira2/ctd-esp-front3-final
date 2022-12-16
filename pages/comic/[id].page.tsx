@@ -2,8 +2,7 @@ import { Button, CardMedia, Container, Typography } from "@mui/material";
 import { getComic } from "dh-marvel/services/marvel/marvel.service"
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router"
-import { Comic } from "../../Types/comic"
+import { Comic } from "../../Types/comic";
 
 
 export const getStaticPaths = async () => {
@@ -13,7 +12,6 @@ export const getStaticPaths = async () => {
     };
 }
 export async function getStaticProps({ params }: any) {
-    /* const { query } = useRouter() */
     const data = await getComic(Number(params.id))
 
     return {
@@ -27,10 +25,6 @@ type PropsDetails = {
     data: Comic
 
 }
-
-
-
-
 
 export default function ComicDetail(props: PropsDetails) {
     const data = props
@@ -87,15 +81,15 @@ export default function ComicDetail(props: PropsDetails) {
                 variant="h3"
                 component="div"
             >PERSONAGEM: </Typography>
-            {comic?.characters.iten.map((iten) => (
-                <Link href={`/characters/${iten.URL.split("characters/").pop()}`}>
-                    <Typography key={iten.name}
+            {comic?.characters.items.map(({item}: any) => (
+                <Link href={`/characters/${item.resourceURI.split("characters/").pop()}`}>
+                    <Typography key={item.name}
                         sx={{ cursor: 'pointer' }}
                         gutterBottom
                         noWrap
                         variant="h6"
                         component="div"
-                    >{iten.name}</Typography>
+                    >{item.name}</Typography>
                 </Link>
             ))}
         </Container>

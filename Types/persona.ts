@@ -1,8 +1,9 @@
-import { item } from "./items";
+import { itens } from "./items";
 
-export type persona ={
+
+export type characters = {
     available: number;
-    return: number;
-    collection: string;
-    iten: item[]; 
+    returned: number;
+    collectionURI: string;
+    items: itens[];
 };

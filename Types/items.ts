@@ -1,5 +1,5 @@
-export type item = {
-    URL: string;
+export type itens = {
+    resourceURI: string;
     name: string;
-    role: string
+    role: string;
 };

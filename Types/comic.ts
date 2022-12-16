@@ -1,4 +1,4 @@
-import { persona } from "../Types/persona";
+import { characters } from "../Types/persona";
 
 export type Comic = {
     id: string;
@@ -9,5 +9,5 @@ export type Comic = {
     };
     price: number;
     stock: number;
-    characters: persona;
+    characters: characters;
 };
